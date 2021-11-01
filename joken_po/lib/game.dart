@@ -41,19 +41,17 @@ class _GameState extends State<Game> {
       || (userChoice == 'paper' && appChoice == 'rock')
     ) {
       setState(() {
-        _message = 'Você ganhou! :D';
+        _message = 'Você GANHOU! :D';
       });
     } else if (
-      (appChoice == 'rock' && userChoice == 'scissors')
-      || (appChoice == 'scissors' && userChoice == 'paper')
-      || (appChoice == 'paper' && userChoice == 'rock')
+      appChoice == userChoice
     ) {
       setState(() {
-        _message = 'Você perdeu! :(';
+        _message = 'EMPATE!';
       });
     } else {
       setState(() {
-        _message = 'EMPATE!';
+        _message = 'Você PERDEU! :(';
       });
     }
   }
@@ -63,28 +61,18 @@ class _GameState extends State<Game> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('JokenPo'),
+        backgroundColor: Colors.deepOrangeAccent,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           const Padding(
             padding: EdgeInsets.only(top: 32, bottom: 16),
             child: Text(
-              'Escolha do adversário (APP)',
+              'Escolha uma opção',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          Image(image: _appChoiceImage,),
-          Padding(
-            padding: EdgeInsets.only(top: 32, bottom: 16),
-            child: Text(
-              _message,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
@@ -106,6 +94,29 @@ class _GameState extends State<Game> {
                 child: Image.asset('images/papel.png', height: 100),
               ),
             ],
+          ),
+          const Padding(
+            padding: EdgeInsets.only(top: 32, bottom: 16),
+            child: Text(
+              'Escolha do adversário (APP)',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          Image(image: _appChoiceImage,),
+          Padding(
+            padding: EdgeInsets.only(top: 32, bottom: 16),
+            child: Text(
+              _message,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
         ],
       ),
