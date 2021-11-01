@@ -34,15 +34,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _aleatoryNumber = 0;
   List phrases = [
-    'A tecnologia move o mundo. (Steve Jobs)',
-    'Computadores são inúteis. Eles só podem dar respostas. (Pablo Picasso)',
-    'Tornamo-nos deuses na tecnologia, mas permanecemos macacos na vida. (Arnold Toynbee)',
-    '⁠A tecnologia e o mundo estão a evoluir, e você? (Martinho Sebastiao)'
+    'Pode se encontrar a felicidade mesmo nas horas mais sombrias, se a pessoa se lembrar de acender a luz. (Harry Potter e o Prisioneiro de Azkaban)',
+    'Esperança é a única coisa mais forte que o medo. Um pouco de esperança é eficaz, muita esperança é perigoso. Faíscas são boas enquanto são contidas. (Jogos Vorazes)',
+    'Tu te tornas eternamente responsável por aquilo que cativas. (O Pequeno Príncipe)',
   ];
 
   void _incrementCounter() {
     setState(() {
-      _aleatoryNumber = Random().nextInt(4);
+      _aleatoryNumber = Random().nextInt(3);
     });
   }
 
