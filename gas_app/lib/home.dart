@@ -10,6 +10,30 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final TextEditingController _etanolController = TextEditingController();
   final TextEditingController _gasController = TextEditingController();
+  String _result = '';
+
+  void onCalc() {
+    double? etanolPrice = double.tryParse(_etanolController.text);
+    double? gasPrice = double.tryParse(_gasController.text);
+
+    if (etanolPrice == null || gasPrice == null) {
+      setState(() {
+        _result =
+            'Valor inválido. Digite um número maior do que 0 e use ponto (.) ao invés da vírgula (,)';
+      });
+    } else {
+      final _factorResult = (etanolPrice / gasPrice) >= 0.7;
+      if (_factorResult) {
+        setState(() {
+          _result = 'Abasteça com GASOLINA.';
+        });
+      } else {
+        setState(() {
+          _result = 'Abasteça com ETANOL.';
+        });
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +95,9 @@ class _HomeState extends State<Home> {
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    onCalc();
+                  },
                 ),
               ),
               const Padding(
@@ -80,7 +106,17 @@ class _HomeState extends State<Home> {
                   'Resultado: ',
                   style: TextStyle(
                     fontSize: 20,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Text(
+                  _result,
+                  style: TextStyle(
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
+                    color: Colors.blue[900],
                   ),
                 ),
               ),
