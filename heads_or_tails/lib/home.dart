@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 import 'package:heads_or_tails/result.dart';
 
@@ -10,9 +11,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  void _openResult() {
+  void _onShowResult() {
+    List optionsArr = ['cara', 'coroa'];
+    var randomNumber = Random().nextInt(optionsArr.length);
+    var result = optionsArr[randomNumber];
+    print(result);
+
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const ResultPage()));
+        context, MaterialPageRoute(builder: (context) => Result(result)));
   }
 
   @override
@@ -25,7 +31,7 @@ class _HomeState extends State<Home> {
         children: <Widget>[
           Image.asset('images/logo.png'),
           GestureDetector(
-            onTap: _openResult,
+            onTap: _onShowResult,
             child: Image.asset('images/botao_jogar.png'),
           ),
         ],
