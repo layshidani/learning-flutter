@@ -3,8 +3,7 @@
 ## Game Cara ou Coroa
 Aplicação com navegação e passagem de dados entre telas.
 
-[![demonstração do app]](https://user-images.githubusercontent.com/43016358/140417229-72a79420-5733-408e-94b0-b0b2c72a1ae9.mov)
-
+[![demonstração do app]](https://user-images.githubusercontent.com/43016358/140417443-25e11c93-b96a-448b-b890-94899c05b530.mov)
 
 ## ATM Consultoria
 App com informações sobre a empresa.
