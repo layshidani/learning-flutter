@@ -1,5 +1,11 @@
 # Projetos - aprendizado Flutter
 
+## Game Cara ou Coroa
+Aplicação com navegação e passagem de dados entre telas.
+
+[![demonstração do app]](https://user-images.githubusercontent.com/43016358/140417229-72a79420-5733-408e-94b0-b0b2c72a1ae9.mov)
+
+
 ## ATM Consultoria
 App com informações sobre a empresa.
 Interfaces com navegação.
@@ -7,7 +13,7 @@ Interfaces com navegação.
 [![demonstração do app]](https://user-images.githubusercontent.com/43016358/140401800-7ed78dfb-abd3-45fb-be4a-ee0ec16ba03d.mov)
 
 
-## JokenPo
+## Game JokenPo
 
 Jogue JokenPo 👊
 
