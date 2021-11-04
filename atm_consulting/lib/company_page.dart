@@ -13,20 +13,34 @@ class _CompanyPageState extends State<CompanyPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('ATM Consultoria'),
-        backgroundColor: Colors.green,
+        backgroundColor: const Color.fromRGBO(237, 108, 66, 20),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
+      body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                child: Image.asset('images/detalhe_empresa.png')
+                Padding(
+                    padding: const EdgeInsets.only(
+                        top: 32, right: 20, bottom: 32, left: 20),
+                    child: Image.asset('images/detalhe_empresa.png')),
+                Text(
+                  'Sobre a Empresa'.toUpperCase(),
+                  style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(237, 108, 66, 20)),
+                ),
               ],
             ),
-            const Center(
+            const Padding(
+              padding: EdgeInsets.only(right: 30, left: 30, bottom: 30),
               child: Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae turpis massa sed elementum tempus egestas sed. Tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Nisl vel pretium lectus quam id leo in. Pretium vulputate sapien nec sagittis. Commodo sed egestas egestas fringilla phasellus. Iaculis urna id volutpat lacus laoreet non. Venenatis cras sed felis eget velit aliquet. Aenean pharetra magna ac placerat vestibulum lectus. Tristique senectus et netus et malesuada fames ac turpis. Nam libero justo laoreet sit amet cursus sit. Nisl nisi scelerisque eu ultrices vitae auctor eu augue ut. Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo. Viverra nam libero justo laoreet sit. Sit amet mattis vulputate enim nulla aliquet porttitor lacus. Arcu bibendum at varius vel pharetra vel. Mauris augue neque gravida in fermentum. Curabitur gravida arcu ac tortor dignissim convallis aenean et.',
+                style: TextStyle(fontSize: 20),
+                textAlign: TextAlign.justify,
+              ),
             ),
           ],
         ),

@@ -13,21 +13,62 @@ class _ClientsPageState extends State<ClientsPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('ATM Consultoria'),
-        backgroundColor: Colors.green,
+        backgroundColor: const Color.fromRGBO(174, 195, 40, 20),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: <Widget>[
-            Center(
-              child: Image.asset('images/detalhe_cliente.png'),
+      body: Column(
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Padding(
+                  padding: const EdgeInsets.only(
+                      top: 32, right: 20, left: 20, bottom: 32),
+                  child: Image.asset('images/detalhe_cliente.png')),
+              Text(
+                'Clientes'.toUpperCase(),
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromRGBO(174, 195, 40, 20),
+                ),
+              ),
+            ],
+          ),
+          Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                    padding:
+                        const EdgeInsets.only(top: 26, right: 20, left: 20),
+                    child: Image.asset('images/cliente1.png')),
+                const Text(
+                  'Empresa de software',
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              ],
             ),
-            const Center(
-              child: Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+          ),
+          Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                    padding: const EdgeInsets.only(
+                        top: 26, right: 20, bottom: 32, left: 20),
+                    child: Image.asset('images/cliente2.png')),
+                const Text(
+                  'Empresa de auditoria',
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

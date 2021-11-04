@@ -45,6 +45,7 @@ class _HomeState extends State<Home> {
           padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Center(
                 child: Image.asset('images/logo.png'),

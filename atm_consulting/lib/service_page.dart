@@ -13,21 +13,54 @@ class _ServicePageState extends State<ServicePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('ATM Consultoria'),
-        backgroundColor: Colors.green,
+        backgroundColor: const Color.fromRGBO(0, 203, 193, 20),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: <Widget>[
-            Center(
-              child: Image.asset('images/detalhe_servico.png'),
-            ),
-            const Center(
-              child: Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-            ),
-          ],
-        ),
+      body: Column(
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Padding(
+                  padding: const EdgeInsets.only(
+                      top: 32, right: 20, bottom: 32, left: 20),
+                  child: Image.asset('images/detalhe_servico.png')),
+              Text(
+                'Serviços'.toUpperCase(),
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromRGBO(0, 203, 193, 20),
+                ),
+              ),
+            ],
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  'Consultoria',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  'Cálculo de preços',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  'Acompanhamento de projetos',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }

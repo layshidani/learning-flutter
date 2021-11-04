@@ -13,21 +13,47 @@ class _ContactPageState extends State<ContactPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('ATM Consultoria'),
-        backgroundColor: Colors.green,
+        backgroundColor: const Color.fromRGBO(64, 187, 134, 20),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: <Widget>[
-            Center(
-              child: Image.asset('images/detalhe_contato.png'),
-            ),
-            const Center(
-              child: Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-            ),
-          ],
-        ),
+      body: Column(
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Padding(
+                  padding: const EdgeInsets.only(
+                      top: 32, right: 20, bottom: 32, left: 20),
+                  child: Image.asset('images/detalhe_contato.png')),
+              Text(
+                'Contato'.toUpperCase(),
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromRGBO(64, 187, 134, 20),
+                ),
+              ),
+            ],
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const <Widget>[
+              Padding(
+                padding: EdgeInsets.only(top: 20),
+                child: Text(
+                  'Email: atm@consulting.com',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 20),
+                child: Text(
+                  'Telefone: 11 98765-4321',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
