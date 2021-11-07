@@ -1,6 +1,9 @@
-import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
+
+import 'package:youtube_clone/screens/init.dart';
+import 'package:youtube_clone/screens/my_library.dart';
+import 'package:youtube_clone/screens/subscriptions.dart';
+import 'package:youtube_clone/screens/trending.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -15,10 +18,10 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     List<Widget> screens = [
-      const Text('Início'),
-      const Text('Em alta'),
-      const Text('Inscrições'),
-      const Text('Biblioteca'),
+      const Init(),
+      const Trending(),
+      const Subscriptions(),
+      const MyLibrary(),
     ];
 
     return Scaffold(
