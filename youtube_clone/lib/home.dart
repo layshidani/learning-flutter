@@ -10,8 +10,17 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
+    List<Widget> screens = [
+      const Text('Início'),
+      const Text('Em alta'),
+      const Text('Inscrições'),
+      const Text('Biblioteca'),
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: Image.asset(
@@ -30,7 +39,35 @@ class _HomeState extends State<Home> {
           opacity: 1,
         ),
       ),
-      body: Container(),
+      body: screens[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        type: BottomNavigationBarType.fixed,
+        fixedColor: Colors.red,
+        items: const [
+          BottomNavigationBarItem(
+            label: 'Início',
+            icon: Icon(Icons.home),
+          ),
+          BottomNavigationBarItem(
+            label: 'Em alta',
+            icon: Icon(Icons.whatshot),
+          ),
+          BottomNavigationBarItem(
+            label: 'Inscrições',
+            icon: Icon(Icons.subscriptions),
+          ),
+          BottomNavigationBarItem(
+            label: 'Biblioteca',
+            icon: Icon(Icons.folder),
+          ),
+        ],
+      ),
     );
   }
 }
