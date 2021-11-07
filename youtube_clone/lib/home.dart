@@ -14,12 +14,21 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('YouTube'),
+        title: Image.asset(
+          'images/youtube.png',
+          width: 98,
+          height: 22,
+        ),
         actions: <Widget>[
           IconButton(onPressed: () {}, icon: const Icon(Icons.videocam)),
           IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
           IconButton(onPressed: () {}, icon: const Icon(Icons.account_circle)),
         ],
+        backgroundColor: Colors.white,
+        iconTheme: const IconThemeData(
+          color: Colors.grey,
+          opacity: 1,
+        ),
       ),
       body: Container(),
     );
