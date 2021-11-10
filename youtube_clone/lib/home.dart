@@ -42,7 +42,10 @@ class _HomeState extends State<Home> {
           opacity: 1,
         ),
       ),
-      body: screens[_currentIndex],
+      body: Padding(
+        padding: const EdgeInsets.all(26),
+        child: screens[_currentIndex],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {
