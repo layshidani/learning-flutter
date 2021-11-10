@@ -4,6 +4,7 @@ import 'package:youtube_clone/screens/init.dart';
 import 'package:youtube_clone/screens/my_library.dart';
 import 'package:youtube_clone/screens/subscriptions.dart';
 import 'package:youtube_clone/screens/trending.dart';
+import 'package:youtube_clone/custom_search_delegate.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,11 +15,12 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
+  String _searchTerm = '';
 
   @override
   Widget build(BuildContext context) {
     List<Widget> screens = [
-      const Init(),
+      Init(_searchTerm),
       const Trending(),
       const Subscriptions(),
       const MyLibrary(),
@@ -32,9 +34,18 @@ class _HomeState extends State<Home> {
           height: 22,
         ),
         actions: <Widget>[
-          IconButton(onPressed: () {}, icon: const Icon(Icons.videocam)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.account_circle)),
+          IconButton(
+              onPressed: () async {
+                String? searchTerm = await showSearch(
+                    context: context, delegate: CustomSearchDelegate());
+
+                setState(() {
+                  _searchTerm = searchTerm as String;
+                });
+              },
+              icon: const Icon(Icons.search)),
+          // IconButton(onPressed: () {}, icon: const Icon(Icons.videocam)),
+          // IconButton(onPressed: () {}, icon: const Icon(Icons.account_circle)),
         ],
         backgroundColor: Colors.white,
         iconTheme: const IconThemeData(

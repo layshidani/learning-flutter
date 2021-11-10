@@ -3,14 +3,16 @@ class Video {
   String title;
   String description;
   String image;
-  String channel;
+  String channelTitle;
+  String youtubeId;
 
   Video(
       {required this.id,
       required this.title,
       required this.description,
       required this.image,
-      required this.channel});
+      required this.channelTitle,
+      required this.youtubeId});
 
   factory Video.fromJson(Map<String, dynamic> json) {
     return Video(
@@ -18,7 +20,8 @@ class Video {
       title: json['snippet']['title'],
       description: json['snippet']['description'],
       image: json['snippet']['thumbnails']['high']['url'],
-      channel: json['snippet']['channelId'],
+      channelTitle: json['snippet']['channelTitle'],
+      youtubeId: json['id']['videoId'],
     );
   }
 }

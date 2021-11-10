@@ -1,13 +1,13 @@
 import 'package:http/http.dart' as http;
-// import 'package:flutter_youtube/flutter_youtube.dart';
-// import 'package:ext_video_player/ext_video_player.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'dart:convert';
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:youtube_clone/models/video.dart';
 
+// ignore: constant_identifier_names
 const String CHANNEL_ID = 'UCVHFbqXqoYvEWM1Ddxl0QDg';
+// ignore: constant_identifier_names
 const String BASE_URL = 'https://www.googleapis.com/youtube';
+// ignore: constant_identifier_names
 String? API_KEY = dotenv.maybeGet('YOUTUBE_API_KEY', fallback: null);
 
 class Api {
@@ -19,7 +19,7 @@ class Api {
             '&maxResults=20'
             '&order=date'
             '&key=$API_KEY'
-            // '&channelId=$CHANNEL_ID'
+            '&channelId=$CHANNEL_ID'
             '&q=$search'));
 
     if (response.statusCode == 200) {
