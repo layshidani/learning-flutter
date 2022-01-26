@@ -16,12 +16,38 @@ class _CoinPageState extends State<CoinPage> {
   NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
   List<Coin> selected = [];
 
+  dinamycAppBar() {
+    if (selected.isEmpty) {
+      return AppBar(
+        title: Text('Criptomoedas'),
+      );
+    } else {
+      return AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => {
+            setState(() => {selected = []})
+          },
+        ),
+        title: Text('${selected.length} selecionadas'),
+        backgroundColor: Colors.blueGrey[50],
+        elevation: 1,
+        iconTheme: const IconThemeData(color: Colors.black87),
+        textTheme: TextTheme(
+          headline6: TextStyle(
+            color: Colors.black87,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Cripto coins'),
-      ),
+      appBar: dinamycAppBar(),
       body: ListView.separated(
         itemBuilder: (BuildContext context, int coin) {
           return ListTile(
